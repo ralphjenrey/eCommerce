@@ -4,13 +4,16 @@
 
  M.R. Shop is a front-end project built using React, Redux Toolkit, and Tailwind CSS. It's a Single Page Application (SPA) designed for a seamless shopping experience. Users can explore sneakers, add or remove items from the cart, adjust item quantities, and see real-time price updates. The project leverages Redux Toolkit for state management and has been deployed on Vercel.
 
-![home](https://github.com/manipandit/snkr-hub/assets/110151059/ac847c8d-f343-41e3-b35c-30426fda8b9a)
+![home](https://github.com/ralphjenrey/eCommerce/blob/main/src/assets/Screenshot%202023-11-24%20162238.png)
 
 
-![explore](https://github.com/manipandit/snkr-hub/assets/110151059/70816afd-3b9a-44bc-8764-881a0bf05548)
+![explore](https://github.com/ralphjenrey/eCommerce/blob/main/src/assets/Screenshot%202023-11-24%20162336.png)
 
+![preview](https://github.com/ralphjenrey/eCommerce/blob/main/src/assets/Screenshot%202023-11-25%20212955.png)
 
-![cart](https://github.com/manipandit/snkr-hub/assets/110151059/eaf8bc4b-834f-43e1-ad9e-f98a5dd2d995)
+![order history](https://github.com/ralphjenrey/eCommerce/blob/main/src/assets/Screenshot%202023-11-25%20213032.png)
+
+![cart](https://github.com/ralphjenrey/eCommerce/blob/main/src/assets/Screenshot%202023-11-25%20213531.png)
 
 
 ## Features
