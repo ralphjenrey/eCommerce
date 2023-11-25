@@ -18,7 +18,7 @@
 
 ## Features
 
-1. **Single Page Application (SPA):** SNKR-hub is designed as a SPA, providing users with a seamless shopping experience without the need for page reloads.
+1. **Single Page Application (SPA):** M.R. Shop is designed as a SPA, providing users with a seamless shopping experience without the need for page reloads.
 
 2. **Add & Remove Items from Cart:** Users can easily add items to their shopping cart and remove them as needed.
 
