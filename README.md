@@ -1,8 +1,8 @@
-# SNKR-hub
+# M.R. Shop
 
 
 
- SNKR-hub is a front-end project built using React, Redux Toolkit, and Tailwind CSS. It's a Single Page Application (SPA) designed for a seamless shopping experience. Users can explore sneakers, add or remove items from the cart, adjust item quantities, and see real-time price updates. The project leverages Redux Toolkit for state management and has been deployed on Vercel.
+ M.R. Shop is a front-end project built using React, Redux Toolkit, and Tailwind CSS. It's a Single Page Application (SPA) designed for a seamless shopping experience. Users can explore sneakers, add or remove items from the cart, adjust item quantities, and see real-time price updates. The project leverages Redux Toolkit for state management and has been deployed on Vercel.
 
 ![home](https://github.com/manipandit/snkr-hub/assets/110151059/ac847c8d-f343-41e3-b35c-30426fda8b9a)
 
@@ -29,7 +29,7 @@
 
 ## Pages
 
-SNKR-hub consists of three main pages:
+M.R. Shop consists of three main pages:
 
 1. **Home Page:** The landing page where users can explore featured sneakers and navigate to other sections.
 
@@ -39,12 +39,12 @@ SNKR-hub consists of three main pages:
 
 ## Installation and Usage
 
-To run SNKR-hub on your local machine, follow these steps:
+To run M.R. Shop on your local machine, follow these steps:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/snkr-hub.git
-   cd snkr-hub
+   git clone https://github.com/yourusername/eCommerce.git
+   cd eCommerce
 2. **Install Dependencies:**
    ```bash
    npm install
@@ -54,11 +54,11 @@ To run SNKR-hub on your local machine, follow these steps:
     npm run dev
 
 5. **Open in Your Browser:**
-   Visit http://localhost:3000 to explore SNKR-hub.
+   Visit http://localhost:3000 to explore M.R. Shop.
 
 ## Technologies Used
 
-SNKR-hub utilizes the following technologies:
+M.R. Shop utilizes the following technologies:
 
 - React
 - Redux Toolkit
@@ -67,7 +67,7 @@ SNKR-hub utilizes the following technologies:
 
 ## Deployment
 
-SNKR-hub is deployed on Vercel, a popular platform for hosting web applications.
+M.R. Shop is deployed on Vercel, a popular platform for hosting web applications.
 
 ## Contributing
 
@@ -77,6 +77,4 @@ If you'd like to contribute to this project, please open an issue or create a pu
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-Enjoy using SNKR-hub, your ultimate destination for sneaker shopping! If you have questions or need assistance, please feel free to reach out.
 
-Happy shopping and coding! 🚀
