@@ -3,26 +3,39 @@ import CartCard from "../components/CartCard";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { checkoutCart } from "../redux/slices/CartSlice";
-
+import { collection, addDoc, serverTimestamp, getFirestore } from "firebase/firestore";
 import toast from "react-hot-toast";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-
+  console.log(cart);
   const [total, setTotal] = useState(0);
   const navigate = useNavigate();
   useEffect(() => {
     setTotal(
-      cart.reduce((acc, curr) => acc + curr.retail_price_cents * curr.qty, 0)
+      cart.reduce((acc, curr) => acc + curr.price * curr.qty, 0)
     );
   }, [cart]);
 
-  const checkout = () => {
-    toast.success("Order Placed Successfully");
-    localStorage.removeItem("localCart");
-    dispatch(checkoutCart());
-    navigate("/");
+   const checkout = async () => {
+    try {
+      // Insert the items into the "orders" collection in Firestore
+      const db = getFirestore();
+      const orderRef = await addDoc(collection(db, "orders"), {
+        items: cart,
+        total: total,
+        timestamp: serverTimestamp(),
+      });
+
+      toast.success("Order Placed Successfully");
+      localStorage.removeItem("localCart");
+      dispatch(checkoutCart());
+      navigate("/");
+    } catch (error) {
+      console.error("Error placing order:", error.message);
+      toast.error("Error placing order. Please try again.");
+    }
   };
   return (
     <div>
@@ -45,7 +58,7 @@ const Cart = () => {
                   </div>
                   <div className="flex justify-center">
                     <button className="bg-[#2a2a2a] w-[200px] text-white p-4 rounded-md cursor-pointer hover:bg-black">
-                      <Link to="/explore">Shop Now</Link>
+                      <Link to="/shop-list">Shop Now</Link>
                     </button>
                   </div>
                 </div>
@@ -57,7 +70,7 @@ const Cart = () => {
                     TOTAL ITEMS : {cart.length}
                   </h1>
                   <h1 className="text-xl dark:text-white md:text-5xl font-bold text-slate-500">
-                    TOTAL PRICE : ₹ {total}
+                    TOTAL PRICE :  ₱ {total}
                   </h1>
                 </div>
                 <div>

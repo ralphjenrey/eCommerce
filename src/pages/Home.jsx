@@ -6,10 +6,10 @@ const Home = () => {
       <div className="relative flex flex-col gap-y-4 lg:flex-row  items-center justify-center w-full min-h-screen ">
         <div className="flex flex-col ">
           <h1 className="text-[150px] md:text-[200px] md:tracking-normal lg:text-[250px] text-slate-300 dark:text-slate-50 font-bold lg:tracking-wide lg:leading-4 lg:shadow-md md:hover:text-slate-400">
-            AIR MAX
+            iPhone
           </h1>
           <img
-            src="./hero-img.png"
+            src="./hero1.png"
             alt="img"
             width={700}
             height={700}
@@ -17,7 +17,7 @@ const Home = () => {
           />
         </div>
         <button className="bg-[#2a2a2a] dark:bg-slate-800 text-white p-2 rounded-md cursor-pointer hover:bg-black">
-          <Link to="/explore">Explore Now</Link>
+          <Link to="/shop-list">Shop Now</Link>
         </button>
       </div>
     </div>

@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./redux/store.js";
 import { Toaster } from "react-hot-toast";
+import { app } from './firebase.js';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
@@ -15,3 +16,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </Provider>
 );
+

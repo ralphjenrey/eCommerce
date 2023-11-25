@@ -1,29 +1,34 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../redux/slices/CartSlice";
+import { addToCart,increaseQty } from "../redux/slices/CartSlice";
 import toast from "react-hot-toast";
 
-const PreviewCard = ({ shoe }) => {
+const PreviewCard = ({ shoe, id }) => {
   const cart = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
-
+  const item = shoe;
+  const img = item.img;
+  const price = item.price;
+  const desc = item.description;
+  const name = item.name;
   const add = () => {
-    const shoeInCart = cart.some((item) => item.id === shoe.id);
+    const shoeInCart = cart.find((item) => item.id === shoe.id);
     if (shoeInCart) {
-      toast.error("You've Already Added This Item");
+      console.log(shoe);
+      dispatch(increaseQty(id));
+      toast.success("Item Added in Cart");
     } else {
+      console.log(shoe);
       dispatch(addToCart(shoe));
       toast.success("Added to cart");
     }
   };
+  
 
-  const img = shoe.original_picture_url;
-  const price = shoe.retail_price_cents;
-  const desc = shoe.story_html;
-  const name = shoe.name;
-  const brand = shoe.brand_name;
-  const gender = shoe.gender[0];
+
+  // const brand = shoe.brand_name;
+  // const gender = shoe.gender[0];
 
   // const sizeRange = shoe.size_range.sort((a, b) => a - b);
   // const sizes = sizeRange.filter((size) => Math.floor(size) === size);
@@ -47,62 +52,45 @@ const PreviewCard = ({ shoe }) => {
                   href="#"
                   className="grid place-items-center border px-3 py-2 hover:bg-gray-500 hover:text-white transition"
                 >
-                  <small>5</small>
-                </a>
-                <a
-                  href="#"
-                  className="grid place-items-center border px-3 py-2 cursor-not-allowed text-gray-300 transition"
-                >
-                  <small>6</small>
+                  <small>RED</small>
                 </a>
                 <a
                   href="#"
                   className="grid place-items-center border px-3 py-2 hover:bg-gray-500 hover:text-white transition"
                 >
-                  <small>7</small>
-                </a>
-                <a
-                  href="#"
-                  className="grid place-items-center border px-3 py-2 cursor-not-allowed text-gray-300 transition"
-                >
-                  <small>8</small>
-                </a>
-                <a
-                  href="#"
-                  className="grid place-items-center border px-3 py-2 cursor-not-allowed text-gray-300 transition"
-                >
-                  <small>9</small>
+                  <small>RED</small>
                 </a>
                 <a
                   href="#"
                   className="grid place-items-center border px-3 py-2 hover:bg-gray-500 hover:text-white transition"
                 >
-                  <small>10</small>
+                  <small>RED</small>
                 </a>
                 <a
                   href="#"
                   className="grid place-items-center border px-3 py-2 hover:bg-gray-500 hover:text-white transition"
                 >
-                  <small>11</small>
+                  <small>RED</small>
                 </a>
                 <a
                   href="#"
                   className="grid place-items-center border px-3 py-2 hover:bg-gray-500 hover:text-white transition"
                 >
-                  <small>12</small>
+                  <small>RED</small>
                 </a>
+                
               </div>
             </div>
           </div>
           <main className="text-gray-500 dark:text-white">
             <small className="uppercase">
-              {gender}'s {brand}
+           
             </small>
             <h3 className="uppercase text-black dark:text-white text-2xl font-semibold">
               {name}
             </h3>
             <h3 className="text-2xl font-semibold mb-7 dark:text-white">
-              ₹ {price}
+            ₱ {price}
             </h3>
             <small className="text-black  dark:text-white text-sm">
               {desc}

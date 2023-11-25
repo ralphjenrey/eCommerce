@@ -1,28 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PreviewCard from "../components/PreviewCard";
 import { useParams } from "react-router-dom";
-import { data } from "../assets/data";
+import axios from "axios";
 
 const Preview = (props) => {
   const { id } = useParams();
-  const shoeId = Number(id);
+  const [shoeData, setShoeData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const sneakers = data.sneakers;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:4000/product-list`);
+        setShoeData(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error.message);
+      }
+    };
 
-  const filteredItems = sneakers.filter(
-    (s) => s.retail_price_cents !== null && s.story_html !== null
-  );
+    fetchData();
+  }, []); // Empty dependency array means this effect runs once when the component mounts
 
-  const qtyUpdate = filteredItems.map((item) => {
-    return { ...item, qty: 1 };
-  });
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-  const items = qtyUpdate.filter((item) => item.id === shoeId);
-  const shoe = items[0];
+  // Filter the data based on the id
+  const shoe = shoeData.find(item => item.id == id);
 
   return (
     <div className="">
-      <PreviewCard shoe={shoe} />
+      <PreviewCard shoe={shoe} id={id} />
     </div>
   );
 };

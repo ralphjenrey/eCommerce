@@ -13,7 +13,16 @@ const CartSlice = createSlice({
       return [];
     },
     addToCart: (state, action) => {
-      return [...state, action.payload];
+      const newItem = action.payload;
+      const existingItem = state.find(item => item.id === newItem.id);
+
+      if (existingItem) {
+        // If the item is already in the cart, increase the quantity
+        existingItem.qty += 1;
+      } else {
+        // If the item is not in the cart, add it with quantity 1
+        return [...state, { ...newItem, qty: 1 }];
+      }
     },
     removeFromCart: (state, action) => {
       return state.filter((shoe) => action.payload !== shoe.id);

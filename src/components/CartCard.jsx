@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 
 const CartCard = ({ item }) => {
   const dispatch = useDispatch();
+  const price = item.price;
 
   const remove = (itemIdx) => {
     dispatch(removeFromCart(itemIdx));
@@ -30,23 +31,24 @@ const CartCard = ({ item }) => {
     <div>
       <div className="h-80 w-[310px] md:h-72 md:w-[600px] bg-slate-100 dark:bg-[#1f1b24] dark:hover:bg-[#121015] rounded-2xl hover:shadow-lg mt-[40px] md:mt-[20px]">
         <div className="">
-          <div>
+          <div className="flex flex-row items-center">
             <img
-              src={item.original_picture_url}
+              src={item.img}
               alt=""
               width={150}
               height={150}
             />
+            <p className="text-white ml-[20px]">{item.description}</p>
           </div>
           <div className="flex  justify-between dark:text-white">
             <div className="flex flex-col ml-[20px] gap-y-2 overflow-y-hidden">
               <div className="text-xs font-bold tracking-normal mr-1 md:text-sm sm:block">
-                {item.story_html.split(" ").slice(0, 28).join(" ") + "..."}
+                {item.name}
               </div>
 
               <div className="flex justify-evenly gap-x-8 mt-2 md:gap-x-0 md:justify-evenly">
                 <div className="mt-[10px] font-bold">
-                  ₹ {item.retail_price_cents}
+                ₱ {price}
                 </div>
                 <div>
                   <div className="flex gap-x-6">

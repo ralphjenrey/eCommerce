@@ -16,17 +16,10 @@ const Navbar = () => {
   return (
     <div className="p-1 md:p-4 flex items-center justify-between h-10 w-full">
       <div className="flex flex-row items-center gap-2">
-        <img src={logo} alt="" height={50} width={50} className="dark:hidden" />
-        <img
-          src={gif}
-          alt=""
-          height={20}
-          width={20}
-          className="hidden dark:block"
-        />
+       
         <span className="text-2xl font-[1000] text-center dark:text-white">
-          SNKR.
-          <span className="font-extrabold text-sm">hub</span>
+          M.R.
+          <span className="font-extrabold text-sm">Shop</span>
         </span>
       </div>
 
@@ -34,8 +27,11 @@ const Navbar = () => {
         <li>
           <Link to="/">Home</Link>
         </li>
+        <li className=" rounded-md h-8 ">
+              <Link to="/orders">Order History</Link>
+            </li>
         <li>
-          <Link to="/explore">Explore</Link>
+          <Link to="/shop-list">Shop Now</Link>
         </li>
         <li>
           <Link to="/cart">
@@ -67,7 +63,10 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
             <li className=" rounded-md h-8">
-              <Link to="/explore">Explore</Link>
+              <Link to="/shop-list">Shop Now</Link>
+            </li>
+            <li className=" rounded-md h-8 ">
+              <Link to="/orders">Order History</Link>
             </li>
             <li className=" rounded-md h-8">
               <Link to="/cart">Cart</Link>
